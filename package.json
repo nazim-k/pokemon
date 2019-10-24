@@ -1,0 +1,38 @@
+{
+  "name": "pokemon",
+  "version": "1.0.0",
+  "description": "React Pokemon Challange",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.production.js",
+    "start": "webpack-dev-server --config webpack.dev.js --env.PORT=3000",
+    "eslint": "./node_modules/.bin/eslint ./src",
+    "eslint:fix": "./node_modules/.bin/eslint ./src --fix"
+  },
+  "author": "nazim.k",
+  "license": "ISC"
+}
