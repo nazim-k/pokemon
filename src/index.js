@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { FlexBox } from 'Components/StyledComponents';
+import { Header } from 'Components';
+import { PokemonContainer } from 'Containers';
 import './index.css';
 
-function App() {
-
-  return <FlexBox center middle width="100vw" height="100vh" bg="orange">
-    Pokemon Challenge
-  </FlexBox>;
-
-}
-
 ReactDOM.render(
-  <App src="asd" date={{ alskdjg: 'asd' }}/>,
+  <React.StrictMode>
+    <Header key="header"/>
+    <PokemonContainer/>
+  </React.StrictMode>,
   document.getElementById('root')
 );

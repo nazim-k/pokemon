@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + '/src',
+  entry: [ '@babel/polyfill', __dirname + '/src' ],
   output: {
     filename: 'index.bundle.js',
     path: __dirname + '/dist',
@@ -21,10 +21,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [ '@babel/preset-env', '@babel/preset-react' ]
-          }
+          loader: 'babel-loader'
         }
       },
       {
@@ -38,7 +35,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Components: __dirname + '/src/Components/'
+      Components: __dirname + '/src/Components',
+      Containers: __dirname + '/src/Containers',
+      pokeapi: __dirname + '/src/pokeapi',
+      CONFIG: __dirname + '/CONFIG.js'
     }
   }
 };
