@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: [ '@babel/polyfill', __dirname + '/src' ],
@@ -10,8 +11,12 @@ module.exports = {
   },
   target: 'web',
   plugins: [
+    new WriteFilePlugin({
+      test: /\.ico$/,
+    }),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index.html',
+      favicon: './public/favicon.ico'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -30,7 +35,7 @@ module.exports = {
           { loader: 'style-loader' },
           { loader: 'css-loader' }
         ]
-      }
+      },
     ]
   },
   resolve: {
