@@ -43,7 +43,7 @@
     "eslint": "./node_modules/.bin/eslint ./src",
     "eslint:fix": "./node_modules/.bin/eslint ./src --fix",
     "predeploy": "npm run test && npm run eslint && npm run build",
-    "deploy": "gh-pages -d dist -b master"
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "author": "nazim.k",
   "license": "ISC"
