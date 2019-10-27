@@ -8,7 +8,7 @@ const { style } = CONFIG.evolutionList;
 
 function EvolutionList({ forms }) {
 
-  return <FlexBox as="section" wrapRow left row { ...style } margin="0 auto">
+  return <FlexBox as="section" wrapRow left row { ...style }>
     {
       forms.map( (form, index) => (
         <PokemonCard key={ index } { ...form }/>

@@ -22,7 +22,7 @@ export default {
       minWidth: '560px',
       maxWidth: '1200px',
       width: '70%',
-      margin: '25px 0 0',
+      margin: '25px auto 0',
       padding: '0 0 25px',
       borderBottom: '1px solid #a0aec0'
     },
