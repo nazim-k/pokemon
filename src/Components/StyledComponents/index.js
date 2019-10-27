@@ -7,7 +7,7 @@ const defaultDivisionBorder = '1px solid #a0aec0';
 
 const commonContainerStyles = css`
   position: ${ props => props.position };
-  top: ${ props => props.top };
+  top: ${ props => props.topPosition };
   left: ${ props => props.left };
   font-size: ${ props => props.fontSize };
   text-align: ${ props => props.textAlign };
@@ -41,37 +41,37 @@ export const FlexBox = styled.div`
   ${ props => props.row
     ? css`
       justify-content: ${ props => {
-        if (props.left) {return 'flex-start';}
-        if (props.right) {return 'flex-end';}
-        if (props.between) {return 'space-between';}
-        if (props.around) {return 'space-around';}
-        if (props.evenly) {return 'space-evenly';}
+        if (props.left) return 'flex-start';
+        if (props.right) return 'flex-end';
+        if (props.between) return 'space-between';
+        if (props.around) return 'space-around';
+        if (props.evenly) return 'space-evenly';
         return 'center';
       }};
       align-items: ${ props => {
-        if (props.top) {return 'flex-start';}
-        if (props.bottom) {return 'flex-end';}
-        if (props.middle) {return 'center';}
-        if (props.baseline) {return 'baseline';}
+        if (props.top) return 'flex-start';
+        if (props.bottom) return 'flex-end';
+        if (props.middle) return 'center';
+        if (props.baseline) return 'baseline';
         return 'stretch';
       }};
         `
     : css`
       flex-direction: column
       align-items: ${ props => {
-        if (props.left) {return 'flex-start';}
-        if (props.right) {return 'flex-end';}
-        if (props.center) {return 'center';}
-        if (props.baseline) {return 'baseline';}
+        if (props.left) return 'flex-start';
+        if (props.right) return 'flex-end';
+        if (props.center) return 'center';
+        if (props.baseline) return 'baseline';
         return 'stretch';
       }};
       justify-content: ${ props => {
-        if (props.top) {return 'flex-start';}
-        if (props.bottom) {return 'flex-end';}
-        if (props.middle) {return 'center';}
-        if (props.between) {return 'space-between';}
-        if (props.around) {return 'space-around';}
-        if (props.evenly) {return 'space-evenly';}
+        if (props.top) return 'flex-start';
+        if (props.bottom) return 'flex-end';
+        if (props.middle) return 'center';
+        if (props.between) return 'space-between';
+        if (props.around) return 'space-around';
+        if (props.evenly) return 'space-evenly';
       }};
     `
   };

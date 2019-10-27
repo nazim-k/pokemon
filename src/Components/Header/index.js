@@ -7,7 +7,7 @@ const { header } = CONFIG;
 function Header() {
 
   return (
-    <FlexBox as="header" position="fixed" top="0" center middle { ...header.style }>
+    <FlexBox as="header" position="fixed" topPosition="0" center middle { ...header.style }>
       <Title light>{ header.text }</Title>
     </FlexBox>
   );

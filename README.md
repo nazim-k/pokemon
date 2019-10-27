@@ -32,6 +32,8 @@
     * Change needed form data from API server
     * Load evolution lists depending on user scroll
     * Refactoring
-5. Add gh-page - ? min;
+5. Add gh-page;
 
-**Total time: 240 min or 4 hours 10 min**
+**Total time: 250 min or 4 hours 10 min**
+
+**You can see the result [here](https://nazim-k.github.io/pokemon/)**
