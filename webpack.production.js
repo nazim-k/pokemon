@@ -4,6 +4,9 @@ const webpackCommonConfig = require('./webpack.common');
 
 module.exports = merge(webpackCommonConfig, {
   mode: 'production',
+  output: {
+    publicPath: '/pokemon'
+  },
   optimization: {
     minimizer: [
       new TerserJSPlugin({
