@@ -3,18 +3,13 @@ export default {
   evolutionChainUrl: id => `https://pokeapi.co/api/v2/evolution-chain/${ id }`,
   numberOfLoadingPokemon: 150,
   loadEvolutionListStep: 10,
-  startToLoadScrollPosition: 10,
+  startToLoadScrollPosition: 0,
   header: {
     style: {
-      height: '10vh',
+      height: 80, //in px;
       bg: '#2d3748',
     },
     text: 'React Pokemon Challenge'
-  },
-  pokemonContainer: {
-    style: {
-      height: '90vh',
-    }
   },
   evolutionList: {
     style: {
@@ -53,8 +48,8 @@ export default {
       bg: '#fff'
     },
     avatarStyle: {
-      size: '80px',
-      padding: '10px'
+      size: '90px',
+      padding: '5px'
     },
     numberPrefix: 'number:',
     namePrefix: ''

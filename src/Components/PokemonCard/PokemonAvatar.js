@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import PropTypes from 'prop-types';
 import { Img } from 'Components/StyledComponents';
+import { ImageContainer } from 'Containers';
 import CONFIG from 'CONFIG';
 
 const { avatarStyle } = CONFIG.pokemonCard;
@@ -19,19 +20,14 @@ function AvatarLoader() {
 }
 
 function PokemonAvatar({ src, alt }) {
-  const [ isLoading, setIsLoading ] = useState(true);
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.alt = alt;
-    img.onload = () => setIsLoading(false);
-  }, [ setIsLoading, src, alt ]);
+  return <ImageContainer
+    src={ src }
+    alt={ alt }
+    fallback={ AvatarLoader }
+    imageComponent={ Img }
+  />;
 
-
-  if (isLoading || !src) return <AvatarLoader/>;
-
-  return <Img src={ src } alt={ alt }/>;
 }
 
 PokemonAvatar.propTypes = {
