@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-function ImageContainer({ src, alt, fallback: Loader, imageComponent: Img, ...props }) {
+function ImageContainer({ fallback: Loader, imageComponent: Img, ...props }) {
   const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
     const img = new Image();
-    img.src = src;
-    img.alt = alt;
+    img.src = props.src;
+    img.alt = props.alt;
     img.onload = () => setIsLoading(false);
-  }, [ setIsLoading, src, alt ]);
+  }, [ setIsLoading, props.src, props.alt ]);
 
 
-  if (isLoading || !src) return <Loader/>;
+  if (isLoading || !props.src) return <Loader/>;
 
-  if (Img) return <Img src={ src } alt={ alt } { ...props }/>;
+  if (Img) return <Img { ...props }/>;
 
-  return <img src={ src } alt={ alt } { ...props }/>;
+  return <img { ...props }/>;
 }
 
 ImageContainer.propTypes = {

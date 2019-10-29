@@ -10,14 +10,13 @@ function EvolutionListContainer({ id }) {
 
   const [ evolutionChain, setEvolutionChain ] = useState(null);
   const [ error, setError ] = useState(null);
+  const forms = evolutionChain || defaultForms;
 
   useEffect(() => {
     getPokemonEvolutionChainById(id)
       .then(setEvolutionChain)
       .catch(setError);
   }, [ id ]);
-
-  const forms = evolutionChain || defaultForms;
 
   if (error) return <ErrorMessage message={ error.message }/>;
 

@@ -21,8 +21,7 @@ export const getPockemonFormsFromEvolutionChain = chain => {
       number: id
     });
 
-    if (form.evolves_to)
-    {form.evolves_to.forEach( form => getForms(form));}
+    form.evolves_to.forEach( form => getForms(form));
 
     return forms;
 

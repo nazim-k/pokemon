@@ -34,14 +34,6 @@ function PokemonContainer() {
   const pokemonContainerElement = useRef();
 
   /* eslint-disable react-hooks/exhaustive-deps*/
-  function handleScroll({ currentTarget }) {
-    const { scrollY, innerHeight } = currentTarget;
-    const { offsetHeight } = pokemonContainerElement.current;
-    //Load New evolution lists when user scroll whole page down
-    if (offsetHeight - scrollY - innerHeight + 2*marginTop <= startToLoadScrollPosition)
-      loadEvolutionLists();
-  }
-
   useEffect(() => {
     // Initial loading
     loadEvolutionLists();
@@ -51,6 +43,14 @@ function PokemonContainer() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [ handleScroll ]);
+
+  function handleScroll({ currentTarget }) {
+    const { scrollY, innerHeight } = currentTarget;
+    const { offsetHeight } = pokemonContainerElement.current;
+    //Load New evolution lists when user scroll whole page down
+    if (offsetHeight - scrollY - innerHeight + 2*marginTop <= startToLoadScrollPosition)
+      loadEvolutionLists();
+  }
   /* eslint-enable react-hooks/exhaustive-deps*/
 
   return <FlexBox
